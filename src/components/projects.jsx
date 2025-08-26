@@ -1,11 +1,14 @@
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import { Container, Row, Col, Card, Button, Image } from "react-bootstrap";
+import expense from "../assets/expense.png";
+import marks_calculator from "../assets/marks_calculator.png";
+import shoppingstore from "../assets/shoppingstore.png";
 
 function Projects() {
   const projects = [
-    { title: "shopping store", desc: "A sleek and user-friendly online store showcasing a variety of phone products.", link: "https://shopping-store-szp7.onrender.com/", demo:"https://shopping-store-szp7.onrender.com/" },
-    { title: "fleet fusion", desc: "A comprehensive fleet and passenger management system for bus companies.", link: "https://github.com/raybon254/FLEET_FUSION.git", demo:"https://github.com/raybon254/FLEET_FUSION.git" },
-    { title: "marks calculator", desc: "A web-based application that allows teachers, students, or parents to easily record and manage student marks across different subjects.", link: "https://github.com/raybon254/Marks_calculator.git", demo:"https://marks-calculator-yyz5-asd1wpueh-rays-projects-be2f0007.vercel.app/" },
-    { title: "expense tracker", desc: "A simple and intuitive web application to track your daily expenses. Easily add, view, and manage your transactions to stay on top of your finances.", link: "https://github.com/raybon254/expense-tracker.git", demo:"https://expense-tracker-2-ms4m.onrender.com/" },
+    { title: "shopping store", desc: "A sleek and user-friendly online store showcasing a variety of phone products.", link: "https://shopping-store-szp7.onrender.com/", demo:"https://shopping-store-szp7.onrender.com/", image: shoppingstore },
+    { title: "fleet fusion", desc: "A comprehensive fleet and passenger management system for bus companies.", link: "https://github.com/raybon254/FLEET_FUSION.git", demo:"https://github.com/raybon254/FLEET_FUSION.git"},
+    { title: "marks calculator", desc: "A web-based application that allows teachers, students, or parents to easily record and manage student marks across different subjects.", link: "https://github.com/raybon254/Marks_calculator.git", demo:"https://marks-calculator-yyz5-asd1wpueh-rays-projects-be2f0007.vercel.app/" , image: marks_calculator },
+    { title: "expense tracker", desc: "A simple and intuitive web application to track your daily expenses. Easily add, view, and manage your transactions to stay on top of your finances.", link: "https://github.com/raybon254/expense-tracker.git", demo:"https://expense-tracker-2-ms4m.onrender.com/", image: expense },
   ];
 
   return (
@@ -18,6 +21,7 @@ function Projects() {
               <Card className="mb-4 shadow-sm">
                 <Card.Body>
                   <Card.Title className="text-uppercase fw-bold">{project.title}</Card.Title>
+                  <Image fluid  style={{ objectFit: "cover" }} src={project.image} alt="error uploading" />
                   <Card.Text>{project.desc}</Card.Text>
                   <Button variant="primary" href={project.link} className="m-2">View</Button>
                   <Button variant="primary" href={project.demo} className="m-2">Demo</Button>
